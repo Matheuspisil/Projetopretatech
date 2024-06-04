@@ -71,6 +71,10 @@ O desenvolvimento do Projeto Educação Afro Brasil contou com a colaboração d
 - **Professores**: Michel e Matheus
 - **Turma**: Turma Preta Tech ADP 1
 
+## Nome da Equipe
+
+- **Desenvolvimento**
+- nomes: Selma, Sandra Tavares, Sandra Ribeiro, Maria de Fatima, Simone Yaralian, Katilene, Queren, Rebeca Miguel, Camila, Angela, Jeruza, Kimberly, Luara, Juliana, Taila. 
 ## Licença
 
 Este projeto está licenciado sob a licença MIT, permitindo o uso, a modificação e a distribuição livre do código-fonte, desde que sejam preservadas as informações de copyright e licença originais.
