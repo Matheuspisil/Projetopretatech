@@ -1,0 +1,71 @@
+body{
+    background-color: antiquewhite;
+    background-size: cover;
+    background-attachment: fixed;
+    display: block;
+
+}
+.header{
+    font-size: 1rem;
+    background-image: url('laptop-5673901_1920.jpg');
+    margin-top: 0;
+    border: rgb(244, 21, 58) solid;
+    padding: 1rem;
+    ;
+
+    text-align: center;
+}
+.div-1{
+    margin: 3% 25% 25% 25%;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 2px 5px 5px black;
+    opacity: .9;
+    padding: 10px;
+    
+}
+.div-2{
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 2px 5px 5px black;
+    padding: 15px;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 20px;
+}
+input{
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+input:focus{
+    background-color: blue;
+    color: black;
+}
+
+footer{
+    font-size: 30px;
+    color: blue;
+}
+
+button{
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+}
+button:hover{
+    background-color: white;
+    color: black;
+    font-size: 40px;
+    cursor: pointer;
+}

@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-<h1>Bem-vindo ao Banco de Talentos</h1>
+
 <button><a href="{{ url_for('main.cadastrar_talento') }}">Cadastrar Talento</a></button>
 <button><a href="{{ url_for('main.visualizar_talentos') }}">Visualizar Talentos</a></button>
 <button><a href="{{ url_for('main.estatisticas') }}">Estatísticas</a></button>
+
 {% endblock %}
