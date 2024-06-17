@@ -1,8 +1,126 @@
-{% extends "base.html" %}
+<!-- {% extends "base.html" %}
 
-{% block content %}
-<h1>Bem-vindo ao Banco de Talentos</h1>
-<button><a href="{{ url_for('main.cadastrar_talento') }}">Cadastrar Talento</a></button>
-<button><a href="{{ url_for('main.visualizar_talentos') }}">Visualizar Talentos</a></button>
-<button><a href="{{ url_for('main.estatisticas') }}">Estatísticas</a></button>
-{% endblock %}
+{% block content %} -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Talento</title>
+    <link rel="stylesheet" href="/app/static/styles.css">
+</head>
+<body>
+
+<div class="div-1">
+    <h1>Cadastrar Talento</h1>
+    <div class="div-2">
+    
+        <form action="/talentos" id="talentos" method="post">
+            <section>
+                <label for="nome">Nome do Candidato</label>
+            <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br><br>
+            
+            <label for="area">Área de Atuação</label>
+            <input type="text" name="area" id="area" required placeholder="Digite a sua área de atuaçao"><br><br>
+            
+            <label for="cargo_pretendido">Cargo Pretendido</label>
+            <input type="text" name="cargo_pretendido" id="cargo_pretendido" required placeholder="Digite seu cargo"><br><br>
+            
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" id="cidade" required placeholder="Digite sua cidade"><br><br>
+            
+            <label for="bairro">Bairro</label>
+            <input type="text" name="bairro" id="bairro" required placeholder="Digite seu bairro"><br><br>
+            
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" required placeholder="Digite seu e-mail"><br><br>
+            
+            <label for="contato">Contato</label>
+            <input type="number" name="telefone" id="contato" required placeholder="Digite seu seu contato"><br><br>
+            
+            <label for="github">Github</label>
+            <input type="text" name="github" id="github" required placeholder="Digite seu github"><br><br>
+            
+            <label for="linkedin">Linkedin</label>
+            <input type="text" name="linkedin" id="linkedin" required placeholder="Digite seu linkedin"><br><br>
+            
+            <label for="sobre">Sobre</label>
+            <textarea name="Sobre" id="sobre" required placeholder="Fale um pouco sobre voce"></textarea><br><br>
+            </section>
+            <section>
+           
+                <h1>Experiencia profissional</h1>
+                <label for="nome">Sua última experiencia</label>
+                <input type="text" name="ultima_experiencia" id="ultima_experiencia" required placeholder="Nos conte qual foi sua útima experiencia"><br><br>
+                <label for="nome">Sua penúltima experiencia profissional</label>
+                <input type="text" name="penultima_experiencia" id="penultima_experiencia" required placeholder="Descreva a sua penúltima experiencia profissional">
+                <div class="bauble_box">
+                    <input class="bauble_input" id="status_trabalho" name="bauble" type="checkbox">
+                    <label class="bauble_label" for="bauble_check">Toggle</label>
+                </div>
+                <br><br>
+            </section>
+            <section>
+                
+                      
+                <h1>Formaçao1</h1>
+                <label for="nome">Nome da Formação</label>
+                <input type="text" name="formacao" id="formacao" required placeholder="Digite o nome do curso"><br><br>
+                <label for="nome">Data início</label>
+                <input type="text" name="inicio_formacao" id="inicio_formacao" required placeholder="Digite a data de incio do curso"><br><br>
+                <label for="nome">Data fim</label>
+                <input type="text" name="termino_formacao" id="termino_formacao" required placeholder="Digita a data de término do curso"><br><br>
+                
+                <h1>Formaçao2</h1>
+                <label for="nome">Nome da Formação</label>
+                <input type="text" name="formacao2" id="formacao2" required placeholder="Digite o nome do curso"><br><br>
+                <label for="nome">Data início</label>
+                <input type="text" name="inicio_formacao2" id="inicio_formacao2" required placeholder="Digite a data de incio do curso"><br><br>
+                <label for="nome">Data fim</label>
+                <input type="text" name="termino_formacao2" id="termino_formacao2" required placeholder="Digita a data de término do curso"><br><br>
+
+                <h1>Formaçao3</h1>
+                <label for="nome">Nome da Formação</label>
+                <input type="text" name="formacao3" id="formacao3" required placeholder="Digite o nome do curso"><br><br>
+                <label for="nome">Data início</label>
+                <input type="text" name="inicio_formacao3" id="inicio_formacao3" required placeholder="Digite a data de incio do curso"><br><br>
+                <label for="nome">Data fim</label>
+                <input type="text" name="termino_formacao3" id="termino_formacao3" required placeholder="Digita a data de término do curso"><br><br>
+
+            </section>
+                <section>
+                   
+                    <h1>Cursos livres</h1>
+                    <label for="nome">Nome do curso</label>
+                    <input type="text" name="curso" id="curso" required placeholder="Digite o nome do curso"><br><br>
+                    <label for="nome">Data início</label>
+                    <input type="text" name="inicio_curso" id="inicio_curso" required placeholder="Digite a data de incio do curso"><br><br>
+                    <label for="nome">Data fim</label>
+                    <input type="text" name="termino_curso" id="termino_curso" required placeholder="Digita a data de término do curso"><br><br>
+            
+                    <label for="nome">Nome do curso</label>
+                    <input type="text" name="curso2" id="curso2" required placeholder="Digite o nome do curso"><br><br>
+                    <label for="nome">Data início</label>
+                    <input type="text" name="inicio_curso2" id="inicio_curso2" required placeholder="Digite a data de incio do curso"><br><br>
+                    <label for="nome">Data fim</label>
+                    <input type="text" name="termino_curso2" id="termino_curso2" required placeholder="Digita a data de término do curso"><br><br>
+
+                    <label for="nome">Nome do curso</label>
+                    <input type="text" name="curso3" id="curso3" required placeholder="Digite o nome do curso"><br><br>
+                    <label for="nome">Data início</label>
+                    <input type="text" name="inicio_curso3" id="inicio_curso3" required placeholder="Digite a data de incio do curso"><br><br>
+                    <label for="nome">Data fim</label>
+                    <input type="text" name="termino_curso3" id="termino_curso3" required placeholder="Digita a data de término do curso"><br><br>
+
+                </section>
+
+            <button>Enviar</button>
+
+        </form>
+    
+    </div>
+</div>
+
+</body>
+</html>
+<!-- {% endblock %} -->
