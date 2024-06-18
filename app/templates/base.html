@@ -2,14 +2,18 @@
 <html>
 <head>
     <title>Banco de Talentos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Banco de Talentos</h1>
+        <h1>Bem vindo ao Banco de Talentos</h1>
+        <h2>A plataforma que vai mudar sua forma de pensar </h2>
     </header>
     <main>
         {% block content %}{% endblock %}
     </main>
+    <footer>
+            <p>Todos os direitos reservados ao grupo1. Projeto Python com Flesk 2024</p>
+    </footer>
 </body>
 </html>
