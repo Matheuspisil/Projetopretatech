@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    color: #ffff;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    flex: 2;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c72d2d;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.informacoes, .contatos, .redesSociais {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-rights {
+    text-align: center;
+    padding: 10px;
+    background-color: #c72d2d;
+    color: #ffffff;
+    gap:30px;
+}
+
+    .social-icons {
+        display: flex;
+        gap: 10px;
+        
+    }
+    .social-icons a {
+        text-decoration: none;
+        color: #000;
+        font-size: 100px;
+    }
+    .social-icons a:hover {
+        color: #007bff;
+    }
+
