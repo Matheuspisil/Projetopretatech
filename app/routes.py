@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from . import db
 from .models import Talento
 
@@ -22,15 +22,15 @@ def cadastrar_talento():
         cidade = request.form["cidade"]
         bairro = request.form["bairro"]
         email = request.form["email"]
-        contato = request.form["contato"]
+        telefone = request.form["contato"]
         github = request.form["github"]
         linkedin = request.form["linkedin"]
 
         # Cria uma nova instância de Talento com os dados recebidos
         talento = Talento(nome=nome, area=area, cargo_pretendido=cargo_pretendido,
                           cidade=cidade, bairro=bairro, email=email,
-                          contato=contato, github=github, linkedin=linkedin)
-
+                          telefone=telefone, github=github, linkedin=linkedin)
+                                        
         # Adiciona o novo talento ao banco de dados
         db.session.add(talento)
         db.session.commit()
@@ -62,21 +62,21 @@ def estatisticas():
 #sugestão de rota
 # Rota para adicionar uma nova formação 
 
-@bp.route('/talento/<int:talento_id>/add_formacao', methods=['POST']) # rota para adicionar formação inicial
-def add_formacao(talento_id):
-    # obter os dados da formação do request.form 
-    nova_formacao = Formacao(
-        formacao=request.form['formacao'],
-        inicio_formacao=request.form['inicio_formacao'],
-        termino_formacao=request.form['termino_formacao'],
-        talento_id=talento_id
-    )
-    db.session.add(nova_formacao)
-    db.session.commit()
-    return 'Formação adicionada com sucesso!', 201
+# @bp.route('/talento/<int:talento_id>/add_formacao', methods=['POST']) # rota para adicionar formação inicial
+# def add_formacao(talento_id):
+#     # obter os dados da formação do request.form 
+#     nova_formacao = add_formacao(
+#         formacao=request.form['formacao'],
+#         inicio_formacao=request.form['inicio_formacao'],
+#         termino_formacao=request.form['termino_formacao'],
+#         talento_id=talento_id
+#     )
+#     db.session.add(nova_formacao)
+#     db.session.commit()
+#     return 'Formação adicionada com sucesso!', 201
 
-@bp.route('/talento/<int:talento_id>/nova_formacao') # rota para mostrar a página com o formulário
-def nova_formacao(talento_id):
-    # Aqui você pode passar o talento_id para o template
-    return render_template('add_formacao.html', talento_id=talento_id)
+# @bp.route('/talento/<int:talento_id>/nova_formacao') # rota para mostrar a página com o formulário
+# def nova_formacao(talento_id):
+#     # Aqui você pode passar o talento_id para o template
+#     return render_template('add_formacao.html', talento_id=talento_id)
 

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Talentos Cadastrados</h1>
+{% if message %}
+    <p>{{ message }}</p>
+{% else %}
+    <ul>
+    {% for talento in talentos %}
+        <li>{{ talento.nome }} - {{ talento.cargo_pretendido }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

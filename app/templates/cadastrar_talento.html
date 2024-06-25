@@ -1,10 +1,43 @@
-{% {% extends "base.html" %}%}
 
-{% {% block  %}
-<body>
-
-  
-</body>
+{% extends "base.html" %}
 
 
-{% endblock  %}%}
+{% block content %}
+
+    <h1>Cadastrar Talento</h1>
+        <form method="POST">
+            
+            <label for="nome">Nome do Candidato</label>
+            <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br><br>
+            
+            <label for="area">Área de atuaçao</label>
+            <input type="text" name="area" id="area" required placeholder="Digite a sua área de atuaçao"><br><br>
+            
+            <label for="cargo_pretendido">Cargo Pretendido</label>
+            <input type="text" name="cargo_pretendido" id="cargo_pretendido" required placeholder="Digite seu cargo"><br><br>
+            
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" id="cidade" required placeholder="Digite sua cidade"><br><br>
+            
+            <label for="bairro">Bairro</label>
+            <input type="text" name="bairro" id="bairro" required placeholder="Digite seu bairro"><br><br>
+            
+            <label for="email">email</label>
+            <input type="text" name="email" id="email" required placeholder="Digite seu email"><br><br>
+            
+            <label for="telefone">Telefone</label>
+            <input type="number" name="contato" id="contato" required placeholder="Digite seu seu contato"><br><br>
+            
+            <label for="github">Github</label>
+            <input type="text" name="github" id="github" required placeholder="Digite seu github"><br><br>
+            
+            <label for="linkedin">Linkedin</label>
+            <input type="text" name="linkedin" id="linkedin" required placeholder="Digite seu linkedin"><br><br>
+            
+           
+            <input type="submit" value="Cadastrar"> 
+        </form>
+
+
+
+{% endblock %}
