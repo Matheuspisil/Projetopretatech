@@ -3,12 +3,12 @@
 
 
 {% block content %}
-
+<div class="mb-3">
     <h1>Cadastrar Talento</h1>
         <form method="POST">
             
             <label for="nome">Nome do Candidato</label>
-            <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br><br>
+            <input class="form-control form-control-sm" type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br><br>
             
             <label for="area">Área de atuaçao</label>
             <input type="text" name="area" id="area" required placeholder="Digite a sua área de atuaçao"><br><br>
@@ -38,6 +38,6 @@
             <input type="submit" value="Cadastrar"> 
         </form>
 
-
+</div>
 
 {% endblock %}
