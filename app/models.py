@@ -1,4 +1,5 @@
 from . import db
+from flask_login import UserMixin
 
 # Definição do modelo Talento
 class Talento(db.Model):
@@ -18,3 +19,9 @@ class Talento(db.Model):
         return f"Talento('{self.nome}', '{self.cargo_pretendido}', '{self.cidade}')"
 
 
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(200), nullable=False)
+    
+    
