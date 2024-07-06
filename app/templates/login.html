@@ -3,8 +3,9 @@
 {% block content %}
 
 <div class="login-class">
-<Form method="POST">´
-
+<Form method="POST">
+    <h6> Para acessar essa área você precisa de permissão...</h6>
+    <p>informe as credenciais de acesso </p>
     <input type="hidden"name="csrf_token"Value={{ csrf_token }}>
 
     <label for="username"> Usuário </label>
