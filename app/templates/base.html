@@ -6,15 +6,13 @@
     <link  rel="Stylesheet" href="{{ url_for('static', filename='styles.css')}}">
     <link  rel="Stylesheet" href="{{ url_for('static', filename='stylesFooter.css')}}">
     <link  rel="stylesheet" href="{{ url_for('static', filename='stylesHeader.css')}}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-content">
-                <img src="logo-educafrotech (1).png" alt="Logo da EducaFroTech" class="logo">
-                <div class="text-content">
-                    <h1>Página inicial</h1>
-                </div>
+                <img class="logoeduc" src="{{ url_for('static', filename='imagens/logosduc.png') }}">
             </div>
         </nav>
     </header>
@@ -46,8 +44,8 @@
             </div>
             <div class="redesSociais">
                 <h1>Siga-nos</h1>
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
         <p class="footer-rights">Todos os direitos reservados ao grupo1. Projeto Python com Flask 2024</p>

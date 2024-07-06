@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Bem-vindo ao Banco de Talentos</h1>
-<button><a href="{{ url_for('main.cadastrar_talento') }}">Cadastrar Talento</a></button>
-<button><a href="{{ url_for('main.visualizar_talentos') }}">Visualizar Talentos</a></button>
-<button><a href="{{ url_for('main.estatisticas') }}">Estatísticas</a></button>
+<div class="botoes-index">
+<div class="hero">
+
+<button type="button" class="btn  btn-lg  "><a href="{{ url_for('main.cadastrar_talento') }}">Cadastrar_Talento</a></button>
+<button type="button" class="btn  btn-lg  "><a class="" href="{{ url_for('main.visualizar_talentos') }}">Visualizar_Talentos</a></button>
+<button type="button" class="btn  btn-lg  "><a href="{{ url_for('main.estatisticas') }}">Estatísticas</a></button>
+</div>
+</div>
 {% endblock %}
