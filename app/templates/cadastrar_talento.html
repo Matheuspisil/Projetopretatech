@@ -1,43 +1,56 @@
-
 {% extends "base.html" %}
 
-
 {% block content %}
-<div class="mb-3">
-    <h1>Cadastrar Talento</h1>
-        <form method="POST">
-            
-            <label for="nome">Nome do Candidato</label>
-            <input class="form-control form-control-sm" type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br><br>
-            
-            <label for="area">Área de atuaçao</label>
-            <input type="text" name="area" id="area" required placeholder="Digite a sua área de atuaçao"><br><br>
-            
-            <label for="cargo_pretendido">Cargo Pretendido</label>
-            <input type="text" name="cargo_pretendido" id="cargo_pretendido" required placeholder="Digite seu cargo"><br><br>
-            
-            <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade" required placeholder="Digite sua cidade"><br><br>
-            
-            <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro" required placeholder="Digite seu bairro"><br><br>
-            
-            <label for="email">email</label>
-            <input type="text" name="email" id="email" required placeholder="Digite seu email"><br><br>
-            
-            <label for="telefone">Telefone</label>
-            <input type="number" name="contato" id="contato" required placeholder="Digite seu seu contato"><br><br>
-            
-            <label for="github">Github</label>
-            <input type="text" name="github" id="github" required placeholder="Digite seu github"><br><br>
-            
-            <label for="linkedin">Linkedin</label>
-            <input type="text" name="linkedin" id="linkedin" required placeholder="Digite seu linkedin"><br><br>
-            
-           
-            <input type="submit" value="Cadastrar"> 
-        </form>
-
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="mb-4">Cadastrar Talento</h1>
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome do Candidato</label>
+                            <input type="text" class="form-control" name="nome" id="nome" required placeholder="Digite seu nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="area" class="form-label">Área de atuação</label>
+                            <input type="text" class="form-control" name="area" id="area" required placeholder="Digite a sua área de atuação">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cargo_pretendido" class="form-label">Cargo Pretendido</label>
+                            <input type="text" class="form-control" name="cargo_pretendido" id="cargo_pretendido" required placeholder="Digite seu cargo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" name="cidade" id="cidade" required placeholder="Digite sua cidade">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" name="bairro" id="bairro" required placeholder="Digite seu bairro">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" required placeholder="Digite seu email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contato" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" name="contato" id="contato" required placeholder="Digite seu telefone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="github" class="form-label">Github</label>
+                            <input type="text" class="form-control" name="github" id="github" required placeholder="Digite seu Github">
+                        </div>
+                        <div class="mb-3">
+                            <label for="linkedin" class="form-label">Linkedin</label>
+                            <input type="text" class="form-control" name="linkedin" id="linkedin" required placeholder="Digite seu Linkedin">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 {% endblock %}

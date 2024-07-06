@@ -20,10 +20,25 @@ body {
     justify-content: space-between;
 }
 
+
 .content {
     flex: 2;
     padding: 20px;
 }
+.footer-content h1{
+    font-size: 1.3rem;
+
+}
+.footer-content a {
+    font-size: 1rem;
+
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+
+}
+
 
 .footer-content {
     display: flex;
@@ -42,10 +57,12 @@ body {
 .footer-rights {
     text-align: center;
     padding: 10px;
+    font-size: 0.9rem;
     background-color: #c72d2d;
     color: #ffffff;
     gap:30px;
 }
+
 
     .social-icons {
         display: flex;
@@ -55,7 +72,7 @@ body {
     .social-icons a {
         text-decoration: none;
         color: #000;
-        font-size: 100px;
+        font-size: 16px;
     }
     .social-icons a:hover {
         color: #007bff;

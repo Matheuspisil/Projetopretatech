@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from . import db
-from .models import Talento
+from .models import Talento, User
+from .forms import TalentoForm
+from flask_login import login_user, logout_user, login_required, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # Criação do Blueprint chamado 'main'
 bp = Blueprint('main', __name__)
@@ -43,9 +46,9 @@ def cadastrar_talento():
 
 # Rota para visualizar todos os talentos cadastrados
 @bp.route("/visualizar")
+@login_required
 def visualizar_talentos():
     talentos = Talento.query.all()  # Obtém todos os talentos cadastrados no banco de dados
-
     if not talentos:
         message = "Nenhum talento cadastrado ainda."
         return render_template("visualizar_talentos.html", message=message)
@@ -55,28 +58,29 @@ def visualizar_talentos():
 
 # Rota para exibir estatísticas ou dados analíticos
 @bp.route("/estatisticas")
+@login_required
 def estatisticas():
     # Implementação futura: incluir gráficos e dados analíticos
     return render_template("estatisticas.html")
 
-#sugestão de rota
-# Rota para adicionar uma nova formação 
+@bp.route("/login", methods=["GET","POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        user = User.query.filter_by(username=username).first()
+        if user and check_password_hash(user.password, password):
+            login_user(user)
+            return redirect(url_for("main.index"))
+        else:
+            flash("Usuário ou senha inválidos ")
+    return render_template("login.html")
 
-# @bp.route('/talento/<int:talento_id>/add_formacao', methods=['POST']) # rota para adicionar formação inicial
-# def add_formacao(talento_id):
-#     # obter os dados da formação do request.form 
-#     nova_formacao = add_formacao(
-#         formacao=request.form['formacao'],
-#         inicio_formacao=request.form['inicio_formacao'],
-#         termino_formacao=request.form['termino_formacao'],
-#         talento_id=talento_id
-#     )
-#     db.session.add(nova_formacao)
-#     db.session.commit()
-#     return 'Formação adicionada com sucesso!', 201
+@bp.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("main.index"))
+        
 
-# @bp.route('/talento/<int:talento_id>/nova_formacao') # rota para mostrar a página com o formulário
-# def nova_formacao(talento_id):
-#     # Aqui você pode passar o talento_id para o template
-#     return render_template('add_formacao.html', talento_id=talento_id)
 

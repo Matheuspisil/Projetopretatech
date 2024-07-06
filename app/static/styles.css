@@ -5,9 +5,35 @@ body{
     display: block;
 
 }
+.botoes-index{
+    align-items: center;
+    justify-content: center;
+}
+.hero{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    height: 60vh;
+    align-items: center;
+    margin-left: 30%;
+
+    
+    gap: 30px;
+    width: 500px;
+
+}
+.hero button {
+    margin: 10px; 
+}
+
+.hero a{
+    color:white;
+    text-decoration: none;
+    color: inherit;
+
+}
 .header{
     font-size: 1rem;
-    background-image: url('laptop-5673901_1920.jpg');
     margin-top: 0;
     border: rgb(244, 21, 58) solid;
     padding: 1rem;
@@ -35,90 +61,82 @@ body{
     box-shadow: 2px 5px 5px black;
     padding: 15px;
 }
-label{
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 20px;
-}
-input{
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: bold;
-}
-input:focus{
-    background-color: blue;
+
+/* input:focus{
+    
     color: black;
-}
+} */
 
 footer{
     font-size: 30px;
     color: blue;
 }
 
-button{
-    font-size: 40px;
+.hero button{
+    background-color: blue;
+    color: white;
+    font-size: 30px;
     font-weight: bold;
     border-radius: 10px;
-    color: white;
-    background-color: black;
+    
 }
-button:hover{
+.hero button:hover{
+    
     background-color: white;
-    color: black;
     font-size: 40px;
     cursor: pointer;
 }
-.bauble_box .bauble_label {
-    background: #2c2;
-    background-position: 62px 5px;
-    background-repeat: no-repeat;
-    background-size: auto 5px;
-    border: 0;
-    border-radius: 50px;
-    box-shadow: inset 0 10px 20px rgba(0,0,0,.4), 0 -1px 0px rgba(0,0,0,.2), inset 0 -1px 0px #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 0;
-    height: 40px;
-    position: relative;
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-    width: 90px;
+
+.login-class {
+    width: 100%; 
+    max-width: 400px; 
+    margin: auto; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
+    text-align: center; 
   }
   
-  .bauble_box .bauble_label:before {
-    background-color: rgba(255,255,255,.2);
-    background-position: 0 0;
-    background-repeat: repeat;
-    background-size: 30% auto;
-    border-radius: 50%;
-    box-shadow: inset 0 -5px 25px #050, 0 10px 20px rgba(0,0,0,.4);
-    content: '';
-    display: block;
-    height: 30px;
-    left: 5px;
-    position: absolute;
-    top: 6px;
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-    width: 30px;
-    z-index: 2;
+.login-class h6,
+.login-class p{
+    color: black;
+}
+  .login-class label {
+    display: block; 
+    margin-bottom: 10px; 
+    color: black;
   }
   
-  .bauble_box input.bauble_input {
-    opacity: 0;
-    z-index: 0;
+  .login-class input[type="text"],
+  .login-class input[type="password"] {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+  }
+
+  
+  .login-class button[type="submit"] {
+    width: 100%; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 4px; 
+    background-color: #fdfdfd; 
+    color: rgb(0, 0, 0); 
+    cursor: pointer; 
   }
   
-  /* Checked */
-  .bauble_box input.bauble_input:checked + .bauble_label {
-    background-color: #c22;
+  .login-class button[type="submit"]:hover {
+    background-color: #02fc62; 
   }
   
-  .bauble_box input.bauble_input:checked + .bauble_label:before {
-    background-position: 150% 0;
-    box-shadow: inset 0 -5px 25px #500, 0 10px 20px rgba(0,0,0,.4);
-    left: calc( 100% - 35px );
-  }
   
+  .container h1{
+    color: black;
+  }
+  .container form label{
+    color: black;
+  }

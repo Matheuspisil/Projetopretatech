@@ -1,0 +1,25 @@
+ {% extends "base.html"%}
+
+{% block content %}
+
+<div class="login-class">
+<Form method="POST">
+    <h6> Para acessar essa área você precisa de permissão...</h6>
+    <p>informe as credenciais de acesso </p>
+    <input type="hidden"name="csrf_token"Value={{ csrf_token }}>
+
+    <label for="username"> Usuário </label>
+    <input type="text"name="username"id="username" required>
+    <br><br>
+
+
+    <label for="password">Senha </label> 
+    <input type="password"name="password" id="password" required>
+    <br><br>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-success">login</button>
+    </div>
+
+</div>
+{% endblock %}
