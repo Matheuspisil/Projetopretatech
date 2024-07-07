@@ -56,6 +56,9 @@ def visualizar_talentos():
     # Renderiza o template 'visualizar_talentos.html' e passa a lista de talentos como contexto
     return render_template("visualizar_talentos.html", talentos=talentos)
 
+
+
+
 # Rota para exibir estatísticas ou dados analíticos
 @bp.route("/estatisticas")
 @login_required
@@ -83,4 +86,8 @@ def logout():
     return redirect(url_for("main.index"))
         
 
-
+# @bp.route("/index")
+#     def voltar_pagina_inicial():
+#     title = "Voltar para a pagina inicial"
+#     return render_template("index.html", title=title)
+   
