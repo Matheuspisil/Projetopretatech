@@ -1,5 +1,5 @@
 body{
-    background-color: antiquewhite;
+    background-color: rgb(224, 138, 25);
     background-size: cover;
     background-attachment: fixed;
     display: block;
@@ -8,6 +8,8 @@ body{
 .botoes-index{
     align-items: center;
     justify-content: center;
+    margin-left: 10%;
+
 }
 .hero{
     display: flex;
@@ -139,4 +141,16 @@ footer{
   }
   .container form label{
     color: black;
+  }
+
+  .cadastrados{
+    color: black;
+    font-size: 35px;
+  }
+
+  .cadastros{
+    color: black;
+    font-size: 25px;
+    
+
   }

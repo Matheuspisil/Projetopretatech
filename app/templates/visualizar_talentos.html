@@ -1,14 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Talentos Cadastrados</h1>
+
+<h1 class="cadastrados">Talentos Cadastrados</h1>
 {% if message %}
     <p>{{ message }}</p>
 {% else %}
     <ul>
     {% for talento in talentos %}
-        <li>{{ talento.nome }} - {{ talento.cargo_pretendido }}</li>
+
+        <li class="cadastros">{{ talento.nome }} - {{ talento.cargo_pretendido }}</li>
+
+        
     {% endfor %}
+    
     </ul>
 {% endif %}
+<a href="{{ url_for('main.index') }}">
+    <button type="submit" class="btn btn-success">Retornar à pagina inicial</button>
+</a>
 {% endblock %}
