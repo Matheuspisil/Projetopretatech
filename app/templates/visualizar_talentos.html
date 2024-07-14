@@ -1,22 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1 class="cadastrados">Talentos Cadastrados</h1>
-{% if message %}
-    <p>{{ message }}</p>
-{% else %}
-    <ul>
-    {% for talento in talentos %}
-
-        <li class="cadastros">{{ talento.nome }} - {{ talento.cargo_pretendido }}</li>
-
-        
-    {% endfor %}
-    
-    </ul>
-{% endif %}
-<a href="{{ url_for('main.index') }}">
-    <button type="submit" class="btn btn-success">Retornar à pagina inicial</button>
-</a>
+<div class="container mt-4">
+    <h1 class="mb-4">Visualizar Talentos</h1>
+    {% if talentos %}
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Profissão</th>
+                    <th>Cidade</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for talento in talentos %}
+                    <tr>
+                        <td>{{ talento.nome }}</td>
+                        <td>{{ talento.profissao }}</td>
+                        <td>{{ talento.cidade }}</td>
+                        <td>{{ talento.status_trabalho }}</td>
+                        <td>
+                            <div class="d-grid gap-2">
+                                <a href="{{ url_for('main.editar_talento', id=talento.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                                <form method="POST" action="{{ url_for('main.excluir_talento', id=talento.id) }}" onsubmit="return confirm('Tem certeza que deseja excluir este talento?');">
+                                    <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Nenhum talento cadastrado ainda.</p>
+    {% endif %}
+</div>
 {% endblock %}
