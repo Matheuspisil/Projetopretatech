@@ -2,55 +2,71 @@
 
 {% block content %}
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="mb-4">Cadastrar Talento</h1>
-                    <form method="POST">
-                        <div class="mb-3">
-                            <label for="nome" class="form-label">Nome do Candidato</label>
-                            <input type="text" class="form-control" name="nome" id="nome" required placeholder="Digite seu nome">
-                        </div>
-                        <div class="mb-3">
-                            <label for="area" class="form-label">Área de atuação</label>
-                            <input type="text" class="form-control" name="area" id="area" required placeholder="Digite a sua área de atuação">
-                        </div>
-                        <div class="mb-3">
-                            <label for="cargo_pretendido" class="form-label">Cargo Pretendido</label>
-                            <input type="text" class="form-control" name="cargo_pretendido" id="cargo_pretendido" required placeholder="Digite seu cargo">
-                        </div>
-                        <div class="mb-3">
-                            <label for="cidade" class="form-label">Cidade</label>
-                            <input type="text" class="form-control" name="cidade" id="cidade" required placeholder="Digite sua cidade">
-                        </div>
-                        <div class="mb-3">
-                            <label for="bairro" class="form-label">Bairro</label>
-                            <input type="text" class="form-control" name="bairro" id="bairro" required placeholder="Digite seu bairro">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" id="email" required placeholder="Digite seu email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contato" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" name="contato" id="contato" required placeholder="Digite seu telefone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="github" class="form-label">Github</label>
-                            <input type="text" class="form-control" name="github" id="github" required placeholder="Digite seu Github">
-                        </div>
-                        <div class="mb-3">
-                            <label for="linkedin" class="form-label">Linkedin</label>
-                            <input type="text" class="form-control" name="linkedin" id="linkedin" required placeholder="Digite seu Linkedin">
-                        </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-success">Cadastrar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <h1>Cadastrar Talento</h1>
+    <form method="POST" action="{{ url_for('main.cadastrar_talento') }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.nome.label(class="form-control-label") }}
+            {{ form.nome(class="form-control") }}
         </div>
-    </div>
+        <div class="form-group">
+            {{ form.idade.label(class="form-control-label") }}
+            {{ form.idade(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.profissao.label(class="form-control-label") }}
+            {{ form.profissao(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.objetivos.label(class="form-control-label") }}
+            {{ form.objetivos(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.status_trabalho.label(class="form-control-label") }}
+            {{ form.status_trabalho(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.area_formacao.label(class="form-control-label") }}
+            {{ form.area_formacao(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.cargo_pretendido.label(class="form-control-label") }}
+            {{ form.cargo_pretendido(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.cidade.label(class="form-control-label") }}
+            {{ form.cidade(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.bairro.label(class="form-control-label") }}
+            {{ form.bairro(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label(class="form-control-label") }}
+            {{ form.email(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.telefone.label(class="form-control-label") }}
+            {{ form.telefone(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.github.label(class="form-control-label") }}
+            {{ form.github(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.linkedin.label(class="form-control-label") }}
+            {{ form.linkedin(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="alert alert-{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
 </div>
 {% endblock %}

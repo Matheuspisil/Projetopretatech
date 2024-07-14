@@ -1,10 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Estatísticas</h2>
-    <!-- Gráficos e dados analíticos aqui -->
-     
-    <a href="{{ url_for('main.index') }}">
-        <button type="submit" class="btn btn-success">Retornar à pagina inicial</button>
-    </a>
+<div class="container">
+    <h1>Estatísticas</h1>
+    <p>Total de cadastros: {{ total_cadastros }}</p>
+
+    <h2>Desempregados</h2>
+    {% if desempregados_info %}
+        <ul>
+            {% for desempregado in desempregados_info %}
+                <li>{{ desempregado.nome }} - {{ desempregado.cargo_pretendido }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum desempregado cadastrado.</p>
+    {% endif %}
+
+    <h2>Empregados</h2>
+    {% if empregados_info %}
+        <ul>
+            {% for empregado in empregados_info %}
+                <li>{{ empregado.nome }} - {{ empregado.profissao }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum empregado cadastrado.</p>
+    {% endif %}
+</div>
 {% endblock %}

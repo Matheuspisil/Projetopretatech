@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Editar Talento</h1>
+    <form method="POST" action="{{ url_for('main.editar_talento', id=talento.id) }}" class="mb-4">
+        {{ form.hidden_tag() }}
+        <div class="form-group mb-3">
+            {{ form.nome.label(class="form-control-label") }}
+            {{ form.nome(class="form-control", style="max-width: 500px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.idade.label(class="form-control-label") }}
+            {{ form.idade(class="form-control", style="max-width: 200px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.profissao.label(class="form-control-label") }}
+            {{ form.profissao(class="form-control", style="max-width: 500px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.objetivos.label(class="form-control-label") }}
+            {{ form.objetivos(class="form-control", rows=4) }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.status_trabalho.label(class="form-control-label") }}
+            {{ form.status_trabalho(class="form-control", style="max-width: 200px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.area_formacao.label(class="form-control-label") }}
+            {{ form.area_formacao(class="form-control", style="max-width: 300px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.cargo_pretendido.label(class="form-control-label") }}
+            {{ form.cargo_pretendido(class="form-control") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.cidade.label(class="form-control-label") }}
+            {{ form.cidade(class="form-control", style="max-width: 300px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.bairro.label(class="form-control-label") }}
+            {{ form.bairro(class="form-control", style="max-width: 300px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.email.label(class="form-control-label") }}
+            {{ form.email(class="form-control", style="max-width: 400px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.telefone.label(class="form-control-label") }}
+            {{ form.telefone(class="form-control", style="max-width: 300px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.github.label(class="form-control-label") }}
+            {{ form.github(class="form-control", style="max-width: 400px;") }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form.linkedin.label(class="form-control-label") }}
+            {{ form.linkedin(class="form-control", style="max-width: 400px;") }}
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="submit" class="btn btn-primary me-md-2">Atualizar</button>
+        </div>
+    </form>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{{ url_for('main.visualizar_talentos') }}" class="btn btn-secondary me-md-2">Voltar</a>
+        <form method="POST" action="{{ url_for('main.excluir_talento', id=talento.id) }}" onsubmit="return confirm('Tem certeza que deseja excluir este talento?');">
+            {{ form.hidden_tag() }}
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
