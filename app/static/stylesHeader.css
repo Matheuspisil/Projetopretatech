@@ -1,65 +1,78 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0; 
+    margin: 0;
     background-color: beige;
 }
 
 header {
-    background-color: #c72d2d; 
-    height: 100px; 
-    width: 100%; 
+    background-color: #c72d2d;
+    height: 100px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 20px; 
-    box-sizing: border-box; 
+    padding: 0 20px;
+    box-sizing: border-box;
 }
+
 .logoeduc {
     width: 15%;
 }
 
 nav {
-    width: 100%; 
+    width: 100%;
 }
 
 .nav-content {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     width: 100%;
 }
 
 .logo {
-    max-width: 100px; 
+    max-width: 100px;
     height: auto;
 }
 
 .text-content {
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 .text-content h1 {
-    color: #fff; 
+    color: #fff;
 }
 
-.apresentacao h1,
-.apresentacao h2 {
-    text-align: center; 
-    color: #333; 
+.apresentacao h1, .apresentacao h2 {
+    text-align: center;
+    color: #333;
 }
 
-
-.login-class{
+.login-class {
     display: flex;
     justify-content: center;
-    justify-items: center;
     flex-direction: column;
-}
-.login-class label{
-    width: 100px;
-    
+    align-items: center;
 }
 
-.login-class input{
+.login-class label {
+    width: 100px;
+}
+
+.login-class input {
     width: 150px;
+}
+
+@media (max-width: 768px) {
+    .logoeduc {
+        width: 30%;
+    }
+    
+    .nav-content {
+        flex-direction: column;
+    }
+
+    .login-class input {
+        width: 100%;
+    }
 }
